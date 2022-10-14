@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "f41f30cf-1252-4c6f-985d-80903fa9349a",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "saveUser1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userName\": \"alex\",\n    \"birthDate\": \"1997-05-02\",\n    \"countryResidence\": \"french\",\n    \"phoneNumber\": \"21526374\",\n    \"gender\": \"MALE\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "saveUser2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userName\": \"dell\",\n    \"birthDate\": \"2000-05-02\",\n    \"countryResidence\": \"french\",\n    \"phoneNumber\": \"21526374\",\n    \"gender\": \"MALE\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "saveUser3",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userName\": \"ran\",\n    \"birthDate\": \"2004-05-02\",\n    \"countryResidence\": \"french\",\n    \"phoneNumber\": \"21526374\",\n    \"gender\": \"FEMALE\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "findUserById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/user/details/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "details",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "findUserByParam",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/user/details",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "user",
+            "details"
+          ],
+          "query": [
+            {
+              "key": "userName",
+              "value": "ran",
+              "disabled": true
+            },
+            {
+              "key": "birthDate",
+              "value": "2000-05-02",
+              "disabled": true
+            },
+            {
+              "key": "countryResidence",
+              "value": "null",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
