@@ -4,6 +4,12 @@
 
 - OpenJDK 8
 
+## Run Project
+
+- mvn spring-boot:run
+
+## API
+
 - Access
   - Server is available on http://localhost:8080
   - Server API is available on http://localhost:8080/user/
