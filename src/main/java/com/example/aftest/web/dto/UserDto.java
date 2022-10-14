@@ -25,13 +25,13 @@ public class UserDto {
                    Date birthDate,
                    String countryResidence,
                    String phoneNumber,
-                   GenderEnum gender) {
+                   GenderEnum genderEnum) {
         setId(id);
         setUserName(userName);
         setBirthDate(birthDate);
         setCountryResidence(countryResidence);
         setPhoneNumber(phoneNumber);
-        setGender(gender.toString());
+        setGender(genderEnum != null ? genderEnum.name() : null);
     }
 
     public User toEntity() {
@@ -44,7 +44,9 @@ public class UserDto {
         return user;
     }
 
-    GenderEnum getGender() {
+    public GenderEnum getGender() {
+        if (gender == null || gender.isEmpty())
+            return null;
         if (gender.equalsIgnoreCase("male"))
             return GenderEnum.MALE;
         if (gender.equalsIgnoreCase("female"))
