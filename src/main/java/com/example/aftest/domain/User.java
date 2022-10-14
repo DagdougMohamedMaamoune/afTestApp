@@ -24,6 +24,7 @@ public class User {
     private String userName;
 
     @Column(name = "birthDate", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date birthDate;
 
     @Column(name = "countryResidence", nullable = false)

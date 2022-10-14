@@ -3,6 +3,7 @@ package com.example.aftest.web.controller;
 
 import com.example.aftest.service.UserService;
 import com.example.aftest.utils.AgeUtils;
+import com.example.aftest.utils.DateUtils;
 import com.example.aftest.web.dto.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -48,9 +49,10 @@ public class UserController {
 
     @GetMapping("/details")
     public ResponseEntity<?> detailUsers(@RequestParam(required = false) String userName,
-                                         @RequestParam(required = false) Date birthDate,
+                                         @RequestParam(required = false) String birthDate,
                                          @RequestParam(required = false) String countryResidence) {
-        List<UserDto> userDtos = userService.findUserByParams(userName, birthDate, countryResidence);
+        Date parsedBirthDate = DateUtils.parseDate(birthDate);
+        List<UserDto> userDtos = userService.findUserByParams(userName, parsedBirthDate, countryResidence);
         if (userDtos.isEmpty())
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Users not registred");
         return ResponseEntity.status(HttpStatus.OK).body(userDtos);
